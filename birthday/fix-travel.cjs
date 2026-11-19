@@ -1,0 +1,1 @@
+const fs=require('fs');let s=fs.readFileSync(__dirname+'/travel-component.js','utf8');s=s.replace("visited[i]?'已点亮 ✓':'待翻阅')))))),","visited[i]?'已点亮 ✓':'待翻阅'))))),");fs.writeFileSync(__dirname+'/travel-component.js',s);

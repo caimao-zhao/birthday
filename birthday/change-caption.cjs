@@ -1,0 +1,1 @@
+const fs=require('fs'),vm=require('vm');const p=__dirname+'/memories.js';const ctx={};vm.createContext(ctx);vm.runInContext(fs.readFileSync(p,'utf8')+';globalThis.items=memories;',ctx);ctx.items[2].text='今天开始马腾霄也是有女朋友的人了';fs.writeFileSync(p,'const memories='+JSON.stringify(ctx.items)+';');

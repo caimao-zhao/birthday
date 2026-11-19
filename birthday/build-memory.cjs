@@ -1,0 +1,1 @@
+const fs=require('fs'),d=__dirname;let js=fs.readFileSync(d+'/app.js','utf8');let start=js.indexOf("next?h('section'");let end=js.indexOf(":h(React.Fragment",start);if(start<0||end<0)throw Error('Missing transition');js=js.slice(0,start)+"next?h(Memories,{onBack:()=>N(false)})"+js.slice(end);fs.writeFileSync(d+'/app.js',js);

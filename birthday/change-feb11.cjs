@@ -1,0 +1,1 @@
+const fs=require('fs'),vm=require('vm'),p=__dirname+'/memories.js';const ctx={};vm.createContext(ctx);vm.runInContext(fs.readFileSync(p,'utf8')+';globalThis.items=memories;',ctx);const item=ctx.items.find(x=>x.date==='2026.02.11');if(!item)throw Error('Date not found');item.text='今日任务：成功脱单，和我组队';fs.writeFileSync(p,'const memories='+JSON.stringify(ctx.items)+';');

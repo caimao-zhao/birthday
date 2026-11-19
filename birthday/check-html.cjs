@@ -1,0 +1,1 @@
+const fs=require('fs'),s=fs.readFileSync('马腾霄生日快乐.html','utf8');for(const k of ['const mvpPhotos=','const duoPhotos=','const trips=','const memories=','const BirthdayMusic='])console.log(k,(s.match(new RegExp(k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length);console.log('script src',(s.match(/<script src=/g)||[]).length)

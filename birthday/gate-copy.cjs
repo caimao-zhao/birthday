@@ -1,0 +1,1 @@
+const fs=require('fs'),d=__dirname;const old="h('h1',null,'马腾霄，',h('br'),'你的生日补给',h('em',null,'已送达。'))",replacement="h('h1',null,'一份',h('em',null,'只为你'),h('br'),'送达的生日补给')";for(const f of ['app.js','gate-component.js']){let s=fs.readFileSync(d+'/'+f,'utf8');if(!s.includes(old))throw Error('Heading not found in '+f);fs.writeFileSync(d+'/'+f,s.replace(old,replacement))}
